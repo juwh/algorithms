@@ -1,0 +1,9 @@
+.git/
+.idea/
+.vs/
+bin/
+cmake-build-debug/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
