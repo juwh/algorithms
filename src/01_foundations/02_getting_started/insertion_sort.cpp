@@ -9,7 +9,7 @@ std::vector< int > InsertionSort(std::vector< int > a) {
 		i = j - 1;
 		while (i >= 0 && a[i] > key) {
 			a[i + 1] = a[i];
-			i = i - 1;
+			i--;
 		}
 		a[i + 1] = key;
 	}
@@ -17,7 +17,7 @@ std::vector< int > InsertionSort(std::vector< int > a) {
 }
 
 int main() {
-	std::vector< int > v{ 9, 7, 8, 2, 5, 9, 3, 1, 4 };
+	std::vector< int > v{ 5, 2, 4, 6, 1, 3 };
 	std::vector< int > v2 = InsertionSort(v);
 	for (auto i = v.begin(); i != v.end(); i++) {
 		std::cout << *i << ' ';
