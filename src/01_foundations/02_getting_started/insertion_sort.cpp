@@ -2,11 +2,11 @@
 #include <vector>
 
 std::vector< int > InsertionSort(std::vector< int > a) {
-	int i;
-	for (int j = 1; j < a.size(); j++) {
+	int j = 1;
+	for (; j < a.size(); j++) {
 		auto key = a[j];
 		// Insert A[j] into the sorted sequence A[1..j-1].
-		i = j - 1;
+		int i = j - 1;
 		while (i >= 0 && a[i] > key) {
 			a[i + 1] = a[i];
 			i--;

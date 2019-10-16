@@ -2,6 +2,7 @@
 .idea/
 .vs/
 bin/
+out/
 cmake-build-debug/
 *.sln
 *.vcxproj
