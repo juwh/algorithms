@@ -3,38 +3,30 @@
 #include <map>
 
 std::map< std::string, int > FindMaximumSubarray(std::vector< int > a) {
+	auto low = -1;
+	auto high = -1;
+	auto sum = 0;
 	if (a.size() > 0) {
-		auto sum = a[0];
-		auto minimum_idx = 0;
-		auto minimum_sum = a[0];
-		for (auto i = 1; i < a.size(); i++) {
-			sum += a[i];
-			if (sum < minimum_sum) {
-				minimum_idx = i;
-				minimum_sum = sum;
+		sum = a[0];
+		auto current_sum = 0;
+		auto current_low = 0;
+		for (int i = 0; i < a.size(); i++) {
+			current_sum += a[i];
+			if (current_sum > sum) {
+				low = current_low;
+				high = i;
+				sum = current_sum;
+			}
+			if (current_sum < 0) {
+				current_sum = 0;
+				current_low = i + 1;
 			}
 		}
-		minimum_idx++;
-		sum = 0;
-		auto maximum_idx = minimum_idx;
-		auto maximum_sum = 0;
-		for (auto j = maximum_idx; j < a.size(); j++) {
-			sum += a[j];
-			if (sum > maximum_sum) {
-				maximum_idx = j;
-				maximum_sum = sum;
-			}
-		}
-		return std::map < std::string, int > {
-			{ "low", minimum_idx },
-			{ "high", maximum_idx },
-			{ "sum", maximum_sum }
-		};
 	}
 	return std::map < std::string, int > {
-		{ "low", -1 },
-		{ "high", -1 },
-		{ "sum", 0 }
+		{ "low", low },
+		{ "high", high },
+		{ "sum", sum }
 	};
 }
 
