@@ -2,7 +2,7 @@
 #include <vector>
 
 std::vector< int > InsertionSort(std::vector< int > a) {
-	int j = 1;
+	size_t j = 1;
 	for (; j < a.size(); j++) {
 		auto key = a[j];
 		// Insert A[j] into the sorted sequence A[1..j-1].

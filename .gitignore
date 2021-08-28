@@ -1,10 +1,43 @@
+# Cached directories and files
 .git/
+.gitignore
 .idea/
+.vscode/
 .vs/
+Debug/
 bin/
-out/
+build/
 cmake-build-debug/
 *.sln
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
+
+# Compiled object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
